@@ -4,13 +4,32 @@
         "range":"+  Velocidad  -",
         "boton1":"Limpiar",
         "boton2":"Validar",
-        "mensaje": "Error en la palabra ingresada, intentelo denuevo"
+        "mensaje": "Error en la palabra ingresada, intentelo denuevo",
+        "cargar": "Cargar",
+        "español": "Español",
+        "ingles": "Inglés",
+        "frances": "Francés"
     },
     "en":{
         "palabra":"Word",
         "range":"+  speed  -",
         "boton1":"clean up",
         "boton2":"validate",
-        "mensaje": "Error in the word entered, try again"
-    }
+        "mensaje": "Error in the word entered, try again",
+        "cargar": "Upload",
+        "español": "Spanish",
+        "ingles": "English",
+        "frances": "French"
+    },
+    "fr":{
+        "palabra":"Mot",
+        "range":"+  Vitesse  -",
+        "boton1":"Nettoyer",
+        "boton2":"Valider",
+        "mensaje": "Erreur dans le mot saisi, réessayez",
+        "cargar": "charger",
+        "español": "Espagnol",
+        "ingles": "Anglais",
+        "frances": "français"
+    }        
 }
