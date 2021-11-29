@@ -114,6 +114,9 @@ function limpiarcinta(){
 
 $("#validar").click(function(){
     limpiargrafo();
+    let pal = palabra;
+    limpiarcinta();
+    palabra = pal;
     vel = $("#velocidad").val();
     mqt('q0',0);
 });
