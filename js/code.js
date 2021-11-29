@@ -124,6 +124,7 @@ $("#validar").click(function(){
 $("#limpiar").click(function(){
     limpiargrafo();
     limpiarcinta();
+    $("#palabra").val("");
 });
 
 function pintarActual(idArista, idNodo){    
