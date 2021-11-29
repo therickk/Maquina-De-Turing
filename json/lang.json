@@ -1,0 +1,16 @@
+{
+    "es":{
+        "palabra":"Palabra",
+        "range":"+  Velocidad  -",
+        "boton1":"Limpiar",
+        "boton2":"Validar",
+        "mensaje": "Error en la palabra ingresada, intentelo denuevo"
+    },
+    "en":{
+        "palabra":"Word",
+        "range":"+  speed  -",
+        "boton1":"clean up",
+        "boton2":"validate",
+        "mensaje": "Error in the word entered, try again"
+    }
+}

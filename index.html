@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script 
+      type = "text/javascript"
+      src = "https://unpkg.com/vis-network/standalone/umd/vis-network.min.js">
+    </script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar b por a</title>
+</head>
+<body>
+    <div class="inner-contact">
+        <div class="row p-0 mb-2">    
+        </div>
+        <div class="container p-0 m-0">
+          <div id="cuadro" class="w-100 p-2">
+            <div class="row p-0 m-0">
+              <div class="col-10 pl-0">
+                <input type="text" name="Palabra" id="palabra" required="required" key="palabra" class="lang" placeholder="Palabra" />
+              </div>
+              <div class="col-2 p-0"><button class="submit w-100" id="cargar">Cargar</button></div>
+              <div class="col-12 p-0" id="cinta"><canvas style="border: 1px solid black;" id="canvas"></canvas></div>
+              <div class="col-md-3">
+                <div class="inputDiv">
+                  <div class="etiqueta"></div>
+                  <input type="range" value="35" min="300" max="3000" autocomplete="off" id="velocidad">
+                  <p class="lang" key='range'>+ velocidad -</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <button class="submit w-100" id="validar" name="submit" class="lang " key='boton2'>Validar</button>
+              </div>
+              <div class="col-md-3">
+                <button class="submit w-100" id="limpiar" name="submit" class="lang" key='boton1'>Limpiar</button>
+              </div>
+              <div class="col-md-3">
+                <div class="content-select">
+                  <select id="lenguage">
+                    <option class="lg" value="es" selected>Español</option>
+                    <option class="lg" value="en">Ingles</option>
+                    <option class="lg" value="fr">Frances</option>
+                  </select>
+                  <i></i>
+                </div>
+              </div> 
+            </div>
+          </div>
+
+          <div id="mess" class="wow animated slideInRight p-0" data-wow-delay=".5s">
+            <div id="mynetwork"></div>
+          </div>
+        </div>
+
+        <div id="mensaje" class="lang" key="mensaje"></div>
+  
+    </div>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>     
+    <script src="js/code.js"></script>
+</body>
+</html>
