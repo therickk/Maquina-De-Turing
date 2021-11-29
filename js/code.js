@@ -10,7 +10,7 @@ $.getJSON('json/lang.json',function(json){
             if($(this).attr('key') == 'palabra'){
                 $(this).attr("placeholder", json[leng][$(this).attr('key')]);
             }else if($(this).attr('key') == 'mensaje'){
-                if ($(this).not(':empty')) {
+                if ($(this).innerHTML == "") {
                     $(this).text(json[leng][$(this).attr('key')]);
                 }
                 error = json[leng][$(this).attr('key')];
