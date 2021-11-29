@@ -99,7 +99,7 @@ function limpiargrafo(){
             }
         });
     }
-    data.nodes.update({id: i, label: 'gf'});
+    data.nodes.update({id: 4, label: 'gf'});
     for(let i=0;i<vecedges.length;i++){
         data.edges.update({id:vecedges[i], color:'gray'});
     }
