@@ -90,7 +90,7 @@ var options = {
 var network = new vis.Network(container, data, options);
 
 function limpiargrafo(){
-    for(let i=0;i<=4;i++){
+    for(let i=0;i <= 4;i++){
         data.nodes.update({id: i,label:'q'+i,
             color:{
                 background: 'white',
@@ -99,8 +99,9 @@ function limpiargrafo(){
             }
         });
     }
+    data.nodes.update({id: i, label: 'gf'});
     for(let i=0;i<vecedges.length;i++){
-        data.edges.update({id:vecedges[i], color:'gray'})
+        data.edges.update({id:vecedges[i], color:'gray'});
     }
     $("#mensaje").text("");
 }
