@@ -199,25 +199,21 @@ function leerb(estado,aux){
 
 function leersp(estado,aux){
     setTimeout(function(){
-        if(estado != 'gf' ){
+        if(estado == 'q0' || estado == 'q1' || estado == 'q2'){
             derecha();
-            if(estado == 'q1'){
+            if(estado == 'q0'){
                 limpiargrafo();
-                pintarActual(22,1);
-            }else if(estado == 'q2'){
+                pintarActual(18,4);
+            }else if(estado == 'q1'){
                 limpiargrafo();
-                pintarActual(23,2);
-            }else if(estado == 'q3'){
-                limpiargrafo();
-                pintarActual(24,3);
+                pintarActual(19,4);
             }else{
                 limpiargrafo();
-                pintarActual(21,4);
+                pintarActual(20,3);
             }    
             mqt('q4',aux+1);
         }
     }, vel);
-    mqt('q4',aux+1);
     return;
 }
 
