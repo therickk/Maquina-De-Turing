@@ -49,7 +49,8 @@ var nodes = new vis.DataSet([
     { id: 1, label: "q1"},
     { id: 2, label: "q2"},
     { id: 3, label: "q3"},
-    { id: 4, label: "gf", title:'Fin' }
+    { id: 4, label: "q4"},
+    { id: 5, label: "gf", title:'Fin' }
 ]);
 
 var edges = new vis.DataSet([
@@ -62,7 +63,7 @@ var edges = new vis.DataSet([
     {id:11, from: 2, to: 2, arrows: "to" , label:'b.a -> R'},
     {id:16, from: 2, to: 1, arrows: "to" , label:'a.a ->R'},
     {id:12, from: 3, to: 3, arrows: "to", label:'a ->L'},
-    {id:17, from: 3, to: 4, arrows: "to", label:'¬ ->R'}
+    {id:17, from: 3, to: 5, arrows: "to", label:'¬ ->R'}
 ]);
 
 // create a network
@@ -90,7 +91,7 @@ var options = {
 var network = new vis.Network(container, data, options);
 
 function limpiargrafo(){
-    for(let i=0;i <= 4;i++){
+    for(let i=0;i <= 5;i++){
         data.nodes.update({id: i,label:'q'+i,
             color:{
                 background: 'white',
@@ -99,7 +100,7 @@ function limpiargrafo(){
             }
         });
     }
-    data.nodes.update({id: 4, label: 'gf'});
+    data.nodes.update({id: 5, label: 'gf'});
     for(let i=0;i<vecedges.length;i++){
         data.edges.update({id:vecedges[i], color:'gray'});
     }
@@ -219,7 +220,7 @@ function mqt(estado,aux){
                 setTimeout(function(){
                     derecha();
                     limpiargrafo();
-                    pintarActual(17,4);
+                    pintarActual(17,5);
                 }, vel);
                 return;
             }
