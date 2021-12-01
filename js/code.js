@@ -49,7 +49,8 @@ var nodes = new vis.DataSet([
     { id: 1, label: "q1"},
     { id: 2, label: "q2"},
     { id: 3, label: "q3"},
-    { id: 4, label: "gf", title:'Fin' }
+    { id: 4, label: "gf", title:'Fin' },
+    { id: 5, label: "q4"}
 ]);
 
 var edges = new vis.DataSet([
@@ -62,7 +63,11 @@ var edges = new vis.DataSet([
     {id:11, from: 2, to: 2, arrows: "to" , label:'b.a -> R'},
     {id:16, from: 2, to: 1, arrows: "to" , label:'a.a ->R'},
     {id:12, from: 3, to: 3, arrows: "to", label:'a ->L'},
-    {id:17, from: 3, to: 4, arrows: "to", label:'¬ ->R'}
+    {id:17, from: 3, to: 4, arrows: "to", label:'¬ ->R'},
+    {id:18, from: 1, to: 5, arrows: "to", label:'_ ->R'},
+    {id:19, from: 2, to: 5, arrows: "to", label:'_ ->R'},
+    {id:20, from: 5, to: 1, arrows: "to", label:'_ ->R'},
+    {id:21, from: 5, to: 2, arrows: "to", label:'_ ->R'}
 ]);
 
 // create a network
@@ -90,7 +95,7 @@ var options = {
 var network = new vis.Network(container, data, options);
 
 function limpiargrafo(){
-    for(let i=0;i <= 4;i++){
+    for(let i=0;i <= 5;i++){
         data.nodes.update({id: i,label:'q'+i,
             color:{
                 background: 'white',
@@ -135,7 +140,7 @@ function pintarActual(idArista, idNodo){
 }
 
 function leera(estado,aux){    
-    if(estado =='q0' || estado =='q1'|| estado =='q2'){
+    if(estado =='q0' || estado =='q1'|| estado =='q2'|| estado =='q4'){
         setTimeout(function(){
             derecha();
             if(estado =='q0'){
@@ -144,6 +149,9 @@ function leera(estado,aux){
             }else if(estado =='q1'){
                 limpiargrafo();
                 pintarActual(9,1);
+            }if(estado =='q4'){
+                limpiargrafo();
+                pintarActual(20,5);
             }else{
                 limpiargrafo();
                 pintarActual(16,1);
@@ -163,12 +171,15 @@ function leera(estado,aux){
 }
 
 function leerb(estado,aux){
-    if(estado =='q0' || estado=='q2'){
+    if(estado =='q0' || estado=='q2'|| estado == 'q4'){
         setTimeout(function(){ 
             derecha();
             if(estado =='q0'){
                 pintarActual(7,0);
                 pintarActual(7,2);
+            }if(estado =='q4'){
+                limpiargrafo();
+                pintarActual(21,5);
             }else{
                 limpiargrafo();
                 pintarActual(11,2);
@@ -188,13 +199,33 @@ function leerb(estado,aux){
         return; 
     }
 } 
-
+function leersp(estado,aux){
+    setTimeout(function(){
+        if(estado == 'q1'||estado == 'q2'){
+            derecha();
+            if(estado == 'q1'){
+                limpiargrafo();
+                pintarActual(18,5);
+            }else{
+                limpiargrafo();
+                pintarActual(19,5);
+            }
+            mqt('q4',aux+1);
+        }else{
+            izquierda();
+            mqt('q3',aux-1);
+        }
+    }, vel);
+    return;
+}
 function mqt(estado,aux){
     if(palabra.charAt(aux) != ''){
         if(palabra.charAt(aux) == 'a'){
             leera(estado,aux);
         }else if(palabra.charAt(aux) == 'b'){
             leerb(estado,aux);  
+        }else if((palabra.charAt(aux) == ' ')){
+            leersp(estado,aux);
         }else {
             $("#mensaje").text(error);
             return;
