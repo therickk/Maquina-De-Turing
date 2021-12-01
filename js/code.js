@@ -70,7 +70,7 @@ var edges = new vis.DataSet([
     {id:21, from: 4, to: 4, arrows: "to", label:'_ ->R'},
     {id:22, from: 4, to: 1, arrows: "to", label:'a.a ->R'},
     {id:23, from: 4, to: 2, arrows: "to", label:'b.a ->R'},
-    {id:23, from: 4, to: 3, arrows: "to", label:'¬ ->R'},
+    {id:24, from: 4, to: 3, arrows: "to", label:'¬ ->R'}
 ]);
 
 // create a network
