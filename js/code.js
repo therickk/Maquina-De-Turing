@@ -221,6 +221,11 @@ function leersp(estado,aux){
                 pintarActual(21,4);
             }    
             mqt('q4',aux+1);
+        }else{
+            izquierda();
+            limpiargrafo();
+            pintarActual(12,3);
+            mqt('q3',aux-1); 
         }
     }, vel);
     return;
