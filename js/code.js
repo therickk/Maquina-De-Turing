@@ -143,7 +143,7 @@ function pintarActual(idArista, idNodo){
 }
 
 function leera(estado,aux){    
-    if(estado =='q0' || estado =='q1'|| estado =='q2'){
+    if(estado =='q0' || estado =='q1'|| estado =='q2' || estado == 'q4'){
         setTimeout(function(){
             derecha();
             if(estado =='q0'){
@@ -152,6 +152,9 @@ function leera(estado,aux){
             }else if(estado =='q1'){
                 limpiargrafo();
                 pintarActual(9,1);
+            }else if(estado =='q4'){
+                limpiargrafo();
+                pintarActual(22,1);
             }else{
                 limpiargrafo();
                 pintarActual(16,1);
@@ -159,7 +162,7 @@ function leera(estado,aux){
             mqt('q1',aux+1);  
         },vel);
         return;
-        }else if(estado == 'q3'){
+    }else if(estado == 'q3'){
         setTimeout(function(){
             izquierda();
             limpiargrafo();
@@ -171,12 +174,15 @@ function leera(estado,aux){
 }
 
 function leerb(estado,aux){
-    if(estado =='q0' || estado=='q2'){
+    if(estado =='q0' || estado=='q2' || estado == 'q4'){
         setTimeout(function(){ 
             derecha();
             if(estado =='q0'){
                 pintarActual(7,0);
                 pintarActual(7,2);
+            }else if(estado =='q4'){
+                limpiargrafo();
+                pintarActual(23,2);
             }else{
                 limpiargrafo();
                 pintarActual(11,2);
@@ -199,7 +205,7 @@ function leerb(estado,aux){
 
 function leersp(estado,aux){
     setTimeout(function(){
-        if(estado == 'q0' || estado == 'q1' || estado == 'q2'){
+        if(estado == 'q0' || estado == 'q1' || estado == 'q2' || estado == 'q4'){
             derecha();
             if(estado == 'q0'){
                 limpiargrafo();
@@ -207,11 +213,20 @@ function leersp(estado,aux){
             }else if(estado == 'q1'){
                 limpiargrafo();
                 pintarActual(19,4);
-            }else{
+            }else if(estado == 'q2'){
                 limpiargrafo();
                 pintarActual(20,3);
+            }else{
+                limpiargrafo();
+                pintarActual(21,4);
             }    
             mqt('q4',aux+1);
+        }else if(estado == 'q3'){
+            izquierda();
+            limpiargrafo();
+            pintarActual(24,3);
+            mqt('q3',aux-1); 
+            return; 
         }
     }, vel);
     return;
