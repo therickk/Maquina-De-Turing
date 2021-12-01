@@ -215,7 +215,7 @@ function leersp(estado,aux){
                 pintarActual(19,4);
             }else if(estado == 'q2'){
                 limpiargrafo();
-                pintarActual(20,3);
+                pintarActual(20,4);
             }else{
                 limpiargrafo();
                 pintarActual(21,4);
