@@ -221,16 +221,12 @@ function leersp(estado,aux){
                 pintarActual(21,4);
             }    
             mqt('q4',aux+1);
-        }else if(estado == 'q3'){
-            izquierda();
-            limpiargrafo();
-            pintarActual(24,3);
-            mqt('q3',aux-1); 
-            return; 
         }
     }, vel);
     return;
 }
+
+
 
 function mqt(estado,aux){
     if(palabra.charAt(aux) != ''){
@@ -245,17 +241,19 @@ function mqt(estado,aux){
             return;
         }
     }else{
-        if(estado == 'q1' || estado == 'q2'|| estado == 'q3'){
-            if(estado == 'q1' || estado == 'q2'){
+        if(estado == 'q1' || estado == 'q2'|| estado == 'q3' || estado == 'q4'){
+            if(estado == 'q1' || estado == 'q2' || estado == 'q4'){
                 setTimeout(function(){
                 izquierda();
                 if(estado == 'q1'){
                     limpiargrafo();
                     pintarActual(8,3);
+                }else if(estado == 'q2'){
+                    limpiargrafo();
+                    pintarActual(10,3);                    
                 }else{
                     limpiargrafo();
-                    pintarActual(10,3);
-                    
+                    pintarActual(24,3); 
                 }
                 mqt('q3',aux-1);
                 }, vel);
