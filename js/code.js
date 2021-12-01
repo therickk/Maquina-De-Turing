@@ -197,12 +197,37 @@ function leerb(estado,aux){
     }
 } 
 
+function leersp(estado,aux){
+    setTimeout(function(){
+        if(estado != 'gf' ){
+            derecha();
+            if(estado == 'q1'){
+                limpiargrafo();
+                pintarActual(22,1);
+            }else if(estado == 'q2'){
+                limpiargrafo();
+                pintarActual(23,2);
+            }else if(estado == 'q3'){
+                limpiargrafo();
+                pintarActual(24,3);
+            }else{
+                limpiargrafo();
+                pintarActual(21,4);
+            }    
+            mqt('q4',aux+1);
+        }
+    }, vel);
+    return;
+}
+
 function mqt(estado,aux){
     if(palabra.charAt(aux) != ''){
         if(palabra.charAt(aux) == 'a'){
             leera(estado,aux);
         }else if(palabra.charAt(aux) == 'b'){
             leerb(estado,aux);  
+        }else if((palabra.charAt(aux) == ' ')){
+            leersp(estado,aux);
         }else {
             $("#mensaje").text(error);
             return;
