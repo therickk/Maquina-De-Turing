@@ -217,6 +217,7 @@ function leersp(estado,aux){
             mqt('q4',aux+1);
         }
     }, vel);
+    mqt('q4',aux+1);
     return;
 }
 
